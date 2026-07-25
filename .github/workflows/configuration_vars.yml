@@ -1,0 +1,19 @@
+#unlike the env variables, config variables can span multiple workflow files=
+name: Testing configuration Variables
+
+on:
+  workflow_dispatch
+
+env:
+  cloud: google-cloud
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Say Hello to Vishal"
+        run: echo "$Greeting $First_Name is using $cloud with project ${{ vars.PROJECT_ID }}!"
+        env:
+          First_Name: Vishal
