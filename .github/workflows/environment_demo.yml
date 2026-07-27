@@ -1,0 +1,29 @@
+name: Environments
+
+on: 
+    workflow_dispatch:
+
+jobs:
+    DEV:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Deploy
+          run: echo "Deployed to DEV"
+    
+    STAGE:
+        runs-on: ubuntu-latest
+
+        needs: DEV
+        steps:
+        - name: Deploy
+        - run: echo "My pretend deploy to DEV"
+
+    PROD:
+        runs-on: ubuntu-latest
+
+        needs: STAGE
+        steps:
+        - name: Deploy
+          run: echo "Deployed to Production (again a pretend deployment)"
+          
