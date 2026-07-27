@@ -16,8 +16,8 @@ jobs:
 
         needs: DEV
         steps:
-            - name: deploy
-              run:  echo "My pretend deploy to DEV"
+            - name: Deploy
+              run:  echo "My pretend deploy to Stage"
 
     PROD:
         runs-on: ubuntu-latest
