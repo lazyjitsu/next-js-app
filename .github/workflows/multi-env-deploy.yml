@@ -1,5 +1,5 @@
 name: CI + CD
-# commit to a branch to test dev deploy sdf commit & merge
+# commit to a branch to test dev deploy sdf commit to main
 on:
   push:
     branches: [main]
